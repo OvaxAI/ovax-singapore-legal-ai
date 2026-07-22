@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -166,14 +167,9 @@ Rules:
     return response.output_text.strip()
 
 
-@app.get("/")
-def root() -> dict[str, str]:
-    return {
-        "name": "OVAX Singapore Company Law AI",
-        "version": "0.1.0",
-        "docs": "/docs",
-        "health": "/api/health",
-    }
+@app.get("/", include_in_schema=False)
+def root() -> FileResponse:
+    return FileResponse(BASE_DIR / "static" / "index.html")
 
 
 @app.get("/api/health")
