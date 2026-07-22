@@ -21,8 +21,6 @@ Automated crawling is intentionally not included in version 0.1. The ingestion a
 ## Run with Docker
 
 ```bash
-git clone https://github.com/YOUR-ACCOUNT/ovax-singapore-legal-ai.git
-cd ovax-singapore-legal-ai
 
 cp .env.example .env
 docker compose up --build
@@ -36,7 +34,7 @@ Open:
 
 ## Run without Docker
 
-Python 3.11 or newer is recommended.
+Python 3.11 
 
 ```bash
 python -m venv .venv
@@ -92,13 +90,12 @@ git init
 git add .
 git commit -m "Initial runnable Singapore company law AI MVP"
 git branch -M main
-git remote add origin https://github.com/YOUR-ACCOUNT/ovax-singapore-legal-ai.git
 git push -u origin main
 ```
 
 ## Recommended next milestone
 
-Version 0.2 should add a controlled ingestion pipeline:
+Version 0.2 (waiting)
 
 1. Add an administrator-approved source registry.
 2. Download only explicitly approved official pages.
